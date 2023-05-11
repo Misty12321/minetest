@@ -35,6 +35,7 @@
 .layout-body>.body-center{
 	flex-grow: 1;
 	padding: 50px 50px;
+  
 }
 .layout-footer{
 	height: 60px;
