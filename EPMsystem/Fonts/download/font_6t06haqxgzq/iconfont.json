@@ -1,0 +1,79 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "201561",
+      "name": "3.1铃铛",
+      "font_class": "lingdang",
+      "unicode": "f01f5",
+      "unicode_decimal": 983541
+    },
+    {
+      "icon_id": "314540",
+      "name": "账号设置",
+      "font_class": "dianbozhibov1217",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "508253",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1277252",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2728800",
+      "name": "课程管理",
+      "font_class": "kechengguanli",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "7473697",
+      "name": "商品管理",
+      "font_class": "shangpinguanli",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "7817213",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "8947462",
+      "name": "教务中心",
+      "font_class": "jiaowuzhongxin",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "20530055",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "27253666",
+      "name": "退出登录",
+      "font_class": "tuichudenglu",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

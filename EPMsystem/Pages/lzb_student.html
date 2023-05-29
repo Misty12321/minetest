@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Untils/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/student.css">
+    <link rel="stylesheet" href="../Fonts/download/font_6t06haqxgzq/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="../Styles/lzb_student.css">
+    <script src="../Untils/jquery-3.6.4.min.js"></script>
+    <script src="../Untils/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid home">
+       <header>
+            <div class="header-left">
+                <img src="../image/logo.png" alt="">
+                <h1>综艺园平台管理系统</h1>
+            </div>
+            <div class="header-right">
+                <div class="hrederdiv1">
+                    <span class="iconfont icon-lingdang msg s1"><span style="margin-left: 5px;">消息</span></span>
+                </div>
+                <div class="hrederdiv2">
+                    <span class="iconfont icon-dianbozhibov1217 s1"><span style="margin-left: 5px;">账号设置</span></span>
+                </div>
+                <div class="hrederdiv2">
+                    <span class="iconfont icon-tuichudenglu exit s1"><span style="margin-left: 5px;">退出登录</span></span>
+                </div>
+            </div>
+        </header>
+        <section>
+             <nav>
+                <ul>
+                    <li>
+                        <h3 id="hot"><span class="iconfont icon-jiaowuzhongxin centerLogo"></span> 教务中心</h3>
+
+                        <ul class="show2" id="hotNews">
+                            <a href="../Pages/xy_schedule.html">
+                                <li>课表管理</li>
+                            </a>
+                            <a href="../Pages/lzb_student.html">
+                                <li>学员管理</li>
+                            </a>
+                            <a href="../Pages/wxy_Course.html">
+                                <li>报课管理</li>
+                            </a>
+                            <a href="../Pages/zt_classManage.html">
+                                <li>班级管理</li>
+                            </a>
+                            <a href="../Pages/lzb_teacher.html">
+                                <li>教师管理</li>
+                            </a>
+                            <a href="../Pages/lzb_RollCall.html">
+                                <li>点名管理</li>
+                            </a>
+                            <a href="../Pages/cyf_renew.html">
+                                <li>续费管理</li>
+                            </a>
+                            <a href="../Pages/cyf_shiftmanagement.html">
+                                <li>换班管理</li>
+                            </a>
+                            <a href="../Pages/xy_offshift.html">
+                                <li>退班管理</li>
+                            </a>
+                            <a href="../Pages/wxy_Replacement.html">
+                                <li>补签管理</li>
+                            </a>
+                            <a href="../Pages/xy_suspension.html">
+                                <li>停课管理</li>
+                            </a>
+                            <a href="">
+                                <li>学员请假管理</li>
+                            </a>
+                            <a href="../Pages/cyf_teacherclass.html">
+                                <li>老师请假代课管理</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="amusement"><span class="iconfont icon-kechengguanli centerLogo"></span> 课程管理</h3>
+                        <ul class="show2" id="amusementNews">
+                            <a href="../Pages/ksSystem.html">
+                                <li>线下课程管理</li>
+                            </a>
+                            <a href="../Pages/kxSystem.html">
+                                <li>在线课程管理</li>
+                            </a>
+                            <a href="../Pages/khSystem.html">
+                                <li>在线课程回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-shangpinguanli centerLogo"></span> 商品管理</h3>
+                        <ul class="show2" id="goodsNews">
+                            <a href="../Pages/WANG.shangpingguanli.html">
+                                <li>商品列表</li>
+                            </a>
+                            <a href="">
+                                <li>新增</li>
+                            </a>
+                            <a href="../Pages/WANG.2huishou.html">
+                                <li>回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <div>
+                    <form class="form-inline">
+                        <div class="inlineBox">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail3"></label>
+                                <input type="text" class="form-control search-con1" id="exampleInputEmail3" placeholder="请输入学员姓名">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword3"></label>
+                                <input type="text" class="form-control search-con2" id="exampleInputPassword3" placeholder="请输入手机号码">
+                            </div>
+                            <div class="form-group dataSearchBox">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-5">
+                                        <!-- 创建时间段选择器 -->
+                                        <input type="text" name="daterange" class="form-control search-con3" />
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default glyphicon glyphicon-search search-btn">搜索</button>
+                        </div>
+                        
+                        <div class="table-bordered table_Box table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <caption>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-info btn-active " data-toggle="modal" data-target="#addModal">新增学员</button>
+                                        <button class="btn btn-info export-btn" data-toggle="modal" data-target="#exportModal">导出学员</button>
+                                    </div>
+                                </caption>
+                                <thead>
+                                    <tr class="active">
+                                        <th>学号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>学员生日</th>
+                                        <th>家长电话</th>
+                                        <th>报名时间</th>
+                                        <th>已用课时/总课时</th>
+                                        <th>总金额（元）</th>
+                                        <th>可请假次数</th>
+                                        <th>有效期</th>
+                                        <th>顾问</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <tr>
+                                        <td>85641</td>
+                                        <td>张小刚</td>
+                                        <td>男</td>
+                                        <td>2020-08-31</td>
+                                        <td>13112345678</td>
+                                        <td>2020-08-29 10：20</td>
+                                        <td>20/100</td>
+                                        <td>3000</td>
+                                        <td><span class="glyphicon glyphicon-pencil"></span>4</td>
+                                        <td><span class="glyphicon glyphicon-pencil"></span>2022-08-31</td>
+                                        <td>JACA</td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            <a href="#">详情</a>
+                                            <a href="#">流失</a>
+                                            <a href="#">续费</a>
+                                            <a href="#">报课</a>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                            <div class="clearfix">
+                                <span class="pages"></span>
+                                
+                                <select class="form-control pagesItem">
+                                    <option>5条/每页</option>
+                                    <option>10条/每页</option>
+                                </select>
+                                
+                                <nav class="navigation" aria-label="Page navigation ">
+                                    <ul class="pagination">
+                                        <!--<li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li> -->
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </section>
+    </div>
+    <!-- 新增学员 -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">学员编辑</h4>
+                </div>
+                <form class="form-horizontal form-padding ">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label ">*学员姓名：</label>
+                        <div editclass="col-sm-8">
+                            <input class="add-name" type="text" class="form-control" id="inputEmail3" placeholder="请输入学员姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">*性别：</label>
+                        <div class="col-sm-5">
+                            <label class="radio-inline">
+                                <input class="add-sex" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="男"> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input class="add-sex" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="女"> 女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">*学员生日：</label>
+                        <div class="col-sm-8">
+                            <input class="add-date" type="date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">*家长电话：</label>
+                        <div class="col-sm-8">
+                            <input class="add-tel" type="tel" class="form-control" id="inputPassword3" placeholder="请输入手机号码">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"  class="btn btn-primary add-btn" data-dismiss="modal">保存</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <!-- 流失 -->
+    <div class="modal fade" id="drainModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">报课提示</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p>确定要流失此数据吗？流失的学员将保留在老学员管理列表中</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button"  class="btn btn-success btn-primary del-btn" data-dismiss="modal">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- 续费 -->
+    <div class="modal fade" id="renewalFeeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">学员编辑</h4>
+                </div>
+                <form class="form-horizontal form-padding">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">*增加课时：</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control edit-classhour" id="inputEmail3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">*续费金额：</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <div class="input-group-addon">¥</div>
+                                <input type="text" class="form-control edit-amount" id="exampleInputAmount" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button"  class="btn btn-success btn-primary edit-btn" data-dismiss="modal">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 报课 -->
+    <div class="modal fade" id="newClassModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">报课提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <select class="form-control">
+                                <option>请选择报课班级</option>
+                                <option>金牌启蒙1班</option>
+                                <option>幼儿舞启蒙1班</option>
+                                <option>中国舞4级C班</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-success btn-primary" data-dismiss="modal">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script src="../Js/center.js"></script>
+    <script src="../Js/lzb_student.js"></script>
+    
+</body>
+
+</html>

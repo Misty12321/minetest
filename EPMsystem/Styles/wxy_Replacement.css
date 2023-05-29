@@ -1,0 +1,140 @@
+.searchName {
+    margin-left: 10px;
+    margin-right: 70px;
+    width: 180px;
+}
+
+.bord {
+    border: 1px solid #c1c1c1;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.searchOp {
+    width: 160px;
+}
+
+.searchOp button {
+    width: 160px;
+}
+
+.searchOp ul {
+    background: #afafaf;
+}
+
+.searchOp li,
+.searchOp li>a {
+    padding: 0 !important;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.searchBtn {
+    margin-left: 250px;
+}
+
+.fas {
+    margin-bottom: 25px;
+}
+
+.heg>th {
+    height: 45px;
+    line-height: 45px !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    height: 34px;
+    line-height: 34px !important;
+}
+
+table {
+    margin-bottom: 0 !important;
+}
+
+.bar {
+    margin-top: 10px;
+}
+
+.inform {
+    margin-left: 40%;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.navs {
+    /* display: flex;
+    justify-content: flex-end; */
+    /* width: 20% !important; */
+    float: right;
+}
+
+.uls {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.options{
+    position: relative;
+    display: inline-block;
+}
+.selt {
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #000;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.options ul {
+    background: #b0b0b0;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    left: 0;
+    width: 50px;
+    padding: 0;
+    display: none;
+}
+.options ul>li {
+    text-align: center;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+
+    border-radius: 2px;
+}
+.cols{
+    background: #2f2f2f;
+}
+.mod{
+    height: 100px;
+    line-height: 100px;
+}
+.pass{
+    height: 90px;
+    line-height: 90px;
+}
+.setting{
+    color: #0f6ab4c4;
+    cursor: pointer;
+}
+.setting:hover{
+    color: #0f6ab4;
+}
+.tongguo{
+    color: #0f6ab4c4;
+}
+.dai{
+    color: #dc780d;
+}
+.fals{
+    color: #dc0d0d;
+}

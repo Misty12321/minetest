@@ -1,0 +1,113 @@
+/* 在<main>标签下创建一个容器 */
+main .container-fluid.home {
+    padding: 20px; /* 设置容器的内边距 */
+  }
+  
+  /* 在<main>标签下的行元素使用Bootstrap的栅格类 */
+  main .row {
+    margin-bottom: 15px; /* 设置行元素之间的下边距 */
+  }
+  
+  /* 在<main>标签下的列元素使用Bootstrap的栅格类 */
+  main .col-sm-6 {
+    /* 设置列元素占据一半宽度，适应小屏幕及以上屏幕尺寸 */
+  }
+  
+  /* 如果存在高度塌陷问题，可以添加 clearfix 类清除浮动 */
+  main .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* 修改<main>标签下元素的字体样式和颜色 */
+  main h1 {
+    font-family: "Helvetica", sans-serif;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* 修改按钮的样式 */
+  main button {
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* 修改链接的样式 */
+  main a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* 鼠标悬停链接时修改样式 */
+  main a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 调整搜索框样式 */
+  main .searchBox .form-group {
+    height: 34px;
+    position: relative;
+  }
+  
+  /* 调整删除图标样式 */
+  main .searchBox .deliamge {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    display: none;
+  }
+  
+  /* 调整分页样式 */
+  main .yeMa {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  /* 调整模态框样式 */
+  main .modal-dialog {
+    max-width: 400px;
+    margin: 30px auto;
+  }
+  
+  /* 调整模态框标题样式 */
+  main .modal-title {
+    font-size: 18px;
+  }
+  
+  /* 调整模态框表单样式 */
+  main .modal-body .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* 调整模态框底部按钮样式 */
+  main .modal-footer .btn-primary {
+    margin-left: 5px;
+  }
+  
+  /* 调整表格样式 */
+  main table.table-bordered {
+    width: 100%;
+  }
+  
+  /* 调整表格标题样式 */
+  main table.table-bordered th {
+    text-align: center;
+  }
+  
+  /* 调整表格单元格样式 */
+  main table.table-bordered td {
+    text-align: center;
+  }
+  
+  /* 调整表格按钮样式 */
+  main table.table-bordered button {
+    margin: 5px;
+  }
+  

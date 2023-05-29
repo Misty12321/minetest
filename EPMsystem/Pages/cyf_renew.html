@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/cyf_renew.css">
+    <link rel="stylesheet" href="../Untils/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/student.css">
+    <link rel="stylesheet" href="../Fonts/download/font_6t06haqxgzq/iconfont.css">
+    <link rel="stylesheet" href="../Fonts/download/font_dgl563a4zka/iconfont.css">
+    <script src="../Untils/jquery-3.6.4.min.js"></script>
+    <script src="../Untils/bootstrap.js"></script>
+
+    <!-- 引入 moment.js 和 Date Range Picker 的 CSS 和 JavaScript -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker@3.1.0/daterangepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker@3.1.0/daterangepicker.min.js"></script>
+
+    <!-- 设置 Moment.js 的语言为中文 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/locale/zh-cn.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid home">
+        <header>
+            <div class="header-left">
+                <img src="../image/logo.png" alt="">
+                <h1>综艺园平台管理系统</h1>
+            </div>
+            <div class="header-right">
+                <div class="hrederdiv1">
+                    <span class="iconfont icon-lingdang msg s1"><span style="margin-left: 5px;">消息</span></span>
+                </div>
+                <div class="hrederdiv2">
+                    <span class="iconfont icon-dianbozhibov1217 s1"><span style="margin-left: 5px;">账号设置</span></span>
+                </div>
+                <div class="hrederdiv2">
+                    <span class="iconfont icon-tuichudenglu exit s1"><span style="margin-left: 5px;">退出登录</span></span>
+                </div>
+            </div>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <h3 id="hot"><span class="iconfont icon-jiaowuzhongxin centerLogo"></span> 教务中心</h3>
+
+                        <ul class="show2" id="hotNews">
+                            <a href="../Pages/xy_schedule.html">
+                                <li>课表管理</li>
+                            </a>
+                            <a href="../Pages/lzb_student.html">
+                                <li>学员管理</li>
+                            </a>
+                            <a href="../Pages/wxy_Course.html">
+                                <li>报课管理</li>
+                            </a>
+                            <a href="../Pages/zt_classManage.html">
+                                <li>班级管理</li>
+                            </a>
+                            <a href="../Pages/lzb_teacher.html">
+                                <li>教师管理</li>
+                            </a>
+                            <a href="../Pages/lzb_RollCall.html">
+                                <li>点名管理</li>
+                            </a>
+                            <a href="../Pages/cyf_renew.html">
+                                <li>续费管理</li>
+                            </a>
+                            <a href="../Pages/cyf_shiftmanagement.html">
+                                <li>换班管理</li>
+                            </a>
+                            <a href="../Pages/xy_offshift.html">
+                                <li>退班管理</li>
+                            </a>
+                            <a href="../Pages/wxy_Replacement.html">
+                                <li>补签管理</li>
+                            </a>
+                            <a href="../Pages/xy_suspension.html">
+                                <li>停课管理</li>
+                            </a>
+                            <a href="">
+                                <li>学员请假管理</li>
+                            </a>
+                            <a href="../Pages/cyf_teacherclass.html">
+                                <li>老师请假代课管理</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="amusement"><span class="iconfont icon-kechengguanli centerLogo"></span> 课程管理</h3>
+                        <ul class="show2" id="amusementNews">
+                            <a href="../Pages/ksSystem.html">
+                                <li>线下课程管理</li>
+                            </a>
+                            <a href="../Pages/kxSystem.html">
+                                <li>在线课程管理</li>
+                            </a>
+                            <a href="../Pages/khSystem.html">
+                                <li>在线课程回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-shangpinguanli centerLogo"></span> 商品管理</h3>
+                        <ul class="show2" id="goodsNews">
+                            <a href="../Pages/WANG.shangpingguanli.html">
+                                <li>商品列表</li>
+                            </a>
+                            <a href="">
+                                <li>新增</li>
+                            </a>
+                            <a href="../Pages/WANG.2huishou.html">
+                                <li>回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <div class="searchBox form-inline home ">
+                    <div class="box1 clearfix row">
+                        <div class="col-md-2">
+                            <input id="search-input" class="form-control search-con input1" placeholder="请输入姓名"
+                                type="text">
+                        </div>
+                        <div class="col-md-2">
+                            <input id="phone-search-input" class="form-control search-con input1" placeholder="请输入手机号"
+                                type="text">
+
+                        </div>
+                        <div class="dropdown state col-md-2">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">全部续费状态
+
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">全部续费状态</a></li>
+                                <li><a href="#">已续费</a></li>
+                                <li><a href="#">待续费</a></li>
+                                <li><a href="#">流失</a></li>
+                            </ul>
+                        </div>
+                        <div id="status-dropdown" class="dropdown state col-md-1">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">全部状态
+
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">全部状态</a></li>
+                                <li><a href="#">待审核</a></li>
+                                <li><a href="#">审核通过</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">审核不通过</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <!-- 创建时间段选择器 -->
+                            <input type="text" name="daterange" class="form-control" style="width: 280px;" />
+                            <!-- <button class="btn1 btn btn-primary" id="search-btn"><span
+                                    class="iconfont icon-ai219">查询</span></button> -->
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn1 btn btn-primary" id="search-btn"><span
+                                    class="iconfont icon-ai219">查询</span></button>
+                        </div>
+
+                    </div>
+                    <div class="box2">
+                        <table class="table table-bordered table-hover table-condensed">
+                            <thead>
+                                <tr class="active">
+                                    <th>学员姓名</th>
+                                    <th>家长昵称</th>
+                                    <th>家长电话</th>
+                                    <th>顾问姓名</th>
+                                    <th>班级名称</th>
+                                    <th>剩余课时/总课时</th>
+                                    <th>订单结束时间</th>
+                                    <th>续费状态</th>
+                                    <th>审核状态</th>
+                                    <th>支付方式</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                        <!-- 分页 -->
+                        <div class="clearfix pg form-inline">
+                            <nav class="navigation" aria-label="Page navigation ">
+                                <ul class="pagination">
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+
+
+            </main>
+        </section>
+    </div>
+
+    <!-- 模态对话框 -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="margin-top: 15%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">审核提示</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="inlineRadio1"><strong>申请审核：</strong></label>
+                            <label class="radio-inline">
+                                <input class="opt" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="审核通过"> 审核通过
+                            </label>
+                            <label class="radio-inline">
+                                <input class="opt" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="审核不通过"> 审核不通过
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" id="submitBtn" class="btn btn-primary btn-success save"
+                        data-dismiss="modal">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 续费模态框 -->
+    <div class="modal fade" id="renewPackageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="margin-top: 10%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">套餐续费</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="mo" class="modal-body">
+                    <!-- 在此处添加模态框的内容 -->
+                    <div class="row mb-2 p1">
+                        <div class="col-sm-6 mr-4">
+                            <p>当前剩余课时:200</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>当前订单结束时间:2020-06-24</p>
+                        </div>
+                    </div>
+
+                    <p><span style="color: red;">*</span>选择套餐：
+                        <select id="input1" class="form-control">
+                            <option>请选择套餐</option>
+                            <option>VIP私人订制 (钢琴) 常规课程</option>
+                            <option>VIP私人订制 (中国舞) 初级</option>
+                            <option>VIP私人订制 (形体礼仪) 中高级</option>
+                            <option>系统常规课程 (11月1日后6.5折赠+60节)</option>
+                            <option>拳击套餐</option>
+                        </select>
+                    </p>
+                    <div class="row mb-2 p2">
+                        <div class="col-sm-6 mr-4">
+                            <p>套餐金额:￥526.00</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>套餐课时:240</p>
+                        </div>
+                    </div>
+                    <div class="row mb-2 p2">
+                        <div class="col-sm-6 mr-4">
+                            <p>套餐有效期:90天</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>剩余总课时:440</p>
+                        </div>
+                    </div>
+
+                    <p>订单有效期:2020-08-10</p>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 人工续费 -->
+    <div class="modal fade" id="renewalFeeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" style="margin-top: 15%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">学员编辑</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+
+                </div>
+                <form class="form-horizontal form-padding">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">*增加课时：</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">*续费金额：</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <div class="input-group-addon">¥</div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-success btn-primary" data-dismiss="modal">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 流失 -->
+    <div class="modal fade" id="lossModal">
+        <div class="modal-dialog" style="margin-top: 15%;">
+            <div class="modal-content">
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">流失提示</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <p>确定要流失此数据吗？流失的学员将保留在老学员管理列表中</p>
+                </div>
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Js/cyf_renew.js"></script>
+    <script src="../Js/center.js"></script>
+
+</body>
+
+</html>

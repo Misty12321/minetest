@@ -1,0 +1,70 @@
+.home section main .searchBox .search-btn{
+    width: 80px;
+    background: rgba(0, 121, 254, 1);
+    color: white;
+}
+.home section main .searchBox{
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+    /* gap: 50px; */
+}
+
+
+.home section main .bottomBox{
+    width: 1217px;
+    height: 560px;
+    border: 1px solid rgb(228, 228, 228);
+    margin-top: 10px;
+    overflow-y: auto;
+}
+.home section main .bottomBox button{
+    margin-top: 10px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: rgb(255, 255, 255);
+
+}
+
+.home section main .bottomBox .addBtn{
+    width: 117px;
+    height: 34px;
+    background: rgba(0, 121, 254, 1);
+}
+.home section main .bottomBox .addBtn:hover{
+    
+    background: rgba(0, 121, 254, 0.8);
+}
+.home section main .bottomBox .importBtn{
+    width: 117px;
+    height: 34px;
+    background: rgb(102, 102, 102);
+}
+.home section main .bottomBox .importBtn:hover{
+    background: rgba(102, 102, 102,0.8);
+}
+.home section main .bottomBox .exportBtn{
+    width: 117px;
+    height: 34px;
+    background: rgb(102, 102, 102);
+}
+.home section main .bottomBox .exportBtn:hover{
+    background: rgba(102, 102, 102,0.8);
+}
+.home section main .bottomBox .tableBox{
+    width: 1170px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.textBlue{
+    color: rgb(0, 121, 254);
+}
+.textRed{
+    color: rgb(255, 0, 0);
+}
+/* .home section main option{
+  
+} */

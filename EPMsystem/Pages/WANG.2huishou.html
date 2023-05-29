@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二个页面</title>
+    <link rel="stylesheet" href="../Untils/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/student.css">
+    <link rel="stylesheet" href="../Fonts/download/font_6t06haqxgzq/iconfont.css">
+    <script src="../Untils/jquery-3.6.4.min.js"></script>
+    <script src="../Untils/bootstrap.js"></script>
+    <link rel="stylesheet" href="../Styles/WANG.1.css">
+</head>
+
+<body>
+    <div class="container-fluid home">
+        <header>
+            <div class="header-left">
+                <img src="../image/logo.png" alt="">
+                <h1>综艺园平台管理系统</h1>
+            </div>
+            <div class="header-right">
+                <div class="hrederdiv1">
+                    <span class="iconfont icon-lingdang msg s1"><span style="margin-left: 5px;">消息</span></span>
+                </div>
+                <div class="hrederdiv2">
+                    <span class="iconfont icon-dianbozhibov1217 s1"><span style="margin-left: 5px;">账号设置</span></span>
+                </div>
+                <div class="hrederdiv2">
+                    <span class="iconfont icon-tuichudenglu exit s1"><span style="margin-left: 5px;">退出登录</span></span>
+                </div>
+            </div>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <h3 id="hot"><span class="iconfont icon-jiaowuzhongxin centerLogo"></span> 教务中心</h3>
+
+                        <ul class="show2" id="hotNews">
+                            <a href="../Pages/xy_schedule.html">
+                                <li>课表管理</li>
+                            </a>
+                            <a href="../Pages/lzb_student.html">
+                                <li>学员管理</li>
+                            </a>
+                            <a href="../Pages/wxy_Course.html">
+                                <li>报课管理</li>
+                            </a>
+                            <a href="../Pages/zt_classManage.html">
+                                <li>班级管理</li>
+                            </a>
+                            <a href="../Pages/lzb_teacher.html">
+                                <li>教师管理</li>
+                            </a>
+                            <a href="../Pages/lzb_RollCall.html">
+                                <li>点名管理</li>
+                            </a>
+                            <a href="../Pages/cyf_renew.html">
+                                <li>续费管理</li>
+                            </a>
+                            <a href="../Pages/cyf_shiftmanagement.html">
+                                <li>换班管理</li>
+                            </a>
+                            <a href="../Pages/xy_offshift.html">
+                                <li>退班管理</li>
+                            </a>
+                            <a href="../Pages/wxy_Replacement.html">
+                                <li>补签管理</li>
+                            </a>
+                            <a href="../Pages/xy_suspension.html">
+                                <li>停课管理</li>
+                            </a>
+                            <a href="">
+                                <li>学员请假管理</li>
+                            </a>
+                            <a href="../Pages/cyf_teacherclass.html">
+                                <li>老师请假代课管理</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="amusement"><span class="iconfont icon-kechengguanli centerLogo"></span> 课程管理</h3>
+                        <ul class="show2" id="amusementNews">
+                            <a href="../Pages/ksSystem.html">
+                                <li>线下课程管理</li>
+                            </a>
+                            <a href="../Pages/kxSystem.html">
+                                <li>在线课程管理</li>
+                            </a>
+                            <a href="../Pages/khSystem.html">
+                                <li>在线课程回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-shangpinguanli centerLogo"></span> 商品管理</h3>
+                        <ul class="show2" id="goodsNews">
+                            <a href="../Pages/WANG.shangpingguanli.html">
+                                <li>商品列表</li>
+                            </a>
+                            <a href="">
+                                <li>新增</li>
+                            </a>
+                            <a href="../Pages/WANG.2huishou.html">
+                                <li>回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <main>
+                <div class="Box">商品列表</div>
+                <div class="box">
+                    <input type="text" placeholder="请输入商品编号进行查询" style="width: 192px; height: 40px;" class="inpzzz">
+                    <div class="dropdown div1box">
+                        <button class="btn btn-default dropdown-toggle div1box" type="button" id="dropdownMenu1"
+                            data-toggle="dropdown" aria-expanded="true">
+                            全部状态
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu ul1" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">全部状态</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="li1">上架</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="li2">下架</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown div1box">
+                        <input type="date" class="input__1">
+                    </div>
+                    <button type="button" class="btn btn-primary btn1 btnzzz">查询</button>
+                </div>
+                <div class="neirong">
+                    <button type="button" class="btn btn-primary btn2">批量编辑</button>
+                    <button type="button" class="btn btn-danger btn2 btns11 ">批量删除</button>
+
+                    <table class="table table-striped  table-hover table1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox">
+                                </th>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>列表图</th>
+                                <th>商品状态</th>
+                                <th>优惠价</th>
+                                <th>原价</th>
+                                <th>销量</th>
+                                <th>库存</th>
+                                <th>排序号</th>
+                                <th>更新时间</th>
+                                <th>创建人</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 页面渲染的内容
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>${renderDate[i].goy}</td> 
+                                <td>${renderDate[i].pop}</td>
+                                <td>${renderDate[i].self}</td>
+                                <td>${renderDate[i].xl}</td>
+                                <td>${renderDate[i].kc}</td>
+                                <td data-id = "${renderDate[i].id}">
+                                    <button class="btn btn-warning">下架</button>
+                                    <button class="btn btn-warning edit" data-toggle="modal"data-target="#editModal">编辑</button>
+                                    <button class="btn btn-danger btn3 del" data-toggle="modal" data-target="#delModal" >删除</button>
+                                </td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <!-- 分页的渲染 -->
+
+                        <!-- <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </main>
+        </section>
+    </div>
+    <!-- 删除弹出框 -->
+    <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    您确定删除吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" data-dismiss="modal" class="btn del-btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增弹出框 -->
+    <div class="modal fade" id="appModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">新增</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">商品编号</label>
+                            <input type="text" class="aaa form-control" id="exampleInputEmail1" placeholder="商品编号">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">商品名称</label>
+                            <input type="text" class="bbb form-control" id="exampleInputEmail1" placeholder="商品名称">
+                        </div>
+                        <div class="form-group">
+                            <label>价格</label>
+                            <input type="text" class="ccc form-control" id="exampleInputEmail1" placeholder="商品价格">
+                        </div>
+                        <div class="form-group">
+                            <label>销量</label>
+                            <input type="text" class="ddd form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>库存</label>
+                            <input type="text" class="eee form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label></label>
+                            <input type="text" class="add-age form-control" id="exampleInputEmail1" placeholder="">
+                        </div> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" data-dismiss="modal" class="btn add-btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 编辑弹出框 -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>商品编号</label>
+                            <input type="text" class="edit-aaa form-control" id="exampleInputEmail1" placeholder="商品编号">
+                        </div>
+                        <div class="form-group">
+                            <label>商品名称</label>
+                            <input type="text" class="edit-bbb form-control" id="exampleInputEmail1" placeholder="商品名称">
+                        </div>
+                        <div class="form-group">
+                            <label>列表图</label>
+                            <input type="file" class="edit-ccc form-control file" id="exampleInputEmail1" placeholder="">
+                            <div class="upload"></div>
+                            <!-- <div class="show-img">
+                                <img src="" alt="">
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label>商品状态</label>
+                            <input type="text" class="edit-ddd form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>优惠价</label>
+                            <input type="text" class="edit-eee form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>原价</label>
+                            <input type="text" class="edit-fff form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>销量</label>
+                            <input type="text" class="edit-ggg form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>库存</label>
+                            <input type="text" class="edit-hhh form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>排序号</label>
+                            <input type="text" class="edit-iii form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>更新时间</label>
+                            <input type="text" class="edit-jjj form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>创建人</label>
+                            <input type="text" class="edit-zzz form-control" id="exampleInputEmail1" placeholder="商品名称">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label></label>
+                            <input type="text" class="add-age form-control" id="exampleInputEmail1" placeholder="">
+                        </div> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" data-dismiss="modal" class="btn add-btn-bianji btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+   
+    <script src="../Js/center.js"></script>
+    <script src="../Js/WANG2.js"></script>
+
+</body>
+
+</html>

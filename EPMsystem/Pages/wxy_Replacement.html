@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Untils/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/student.css">
+    <link rel="stylesheet" href="../Fonts/download/font_6t06haqxgzq/iconfont.css">
+    <link rel="stylesheet" href="../Styles/wxy_Replacement.css">
+    <link rel="stylesheet" href="../Fonts/font_o96mbeeqy1l/iconfont.css">
+    <script src="../Untils/jquery-3.6.4.min.js"></script>
+    <script src="../Untils/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid home">
+        <header class="clearfix">
+            <img src="../image/logo.png" alt="">
+            <h1>综艺园平台管理系统</h1>
+            <div>
+                <span class="iconfont icon-lingdang"><span style="margin-left: 5px;">消息</span></span>
+                <span class="iconfont icon-dianbozhibov1217"><span style="margin-left: 5px;">账号设置</span></span>
+                <span class="iconfont icon-tuichudenglu exit"><span style="margin-left: 5px;">退出登录</span></span>
+            </div>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <h3 id="hot"><span class="iconfont icon-jiaowuzhongxin centerLogo"></span> 教务中心</h3>
+
+                        <ul class="show2" id="hotNews">
+                            <a href="">
+                                <li>课表管理</li>
+                            </a>
+                            <a href="">
+                                <li>学员管理</li>
+                            </a>
+                            <a href="">
+                                <li>报课管理</li>
+                            </a>
+                            <a href="./zt_classManage.html">
+                                <li>班级管理</li>
+                            </a>
+                            <a href="">
+                                <li>教师管理</li>
+                            </a>
+                            <a href="">
+                                <li>点名管理</li>
+                            </a>
+                            <a href="">
+                                <li>续费管理</li>
+                            </a>
+                            <a href="">
+                                <li>换班管理</li>
+                            </a>
+                            <a href="">
+                                <li>补签管理</li>
+                            </a>
+                            <a href="">
+                                <li>听课管理</li>
+                            </a>
+                            <a href="">
+                                <li>学员请假管理</li>
+                            </a>
+                            <a href="">
+                                <li>老师请假代课管理</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="amusement"><span class="iconfont icon-kechengguanli centerLogo"></span> 课程管理</h3>
+                        <ul class="show2" id="amusementNews">
+                            <a href="">
+                                <li>线下课程管理</li>
+                            </a>
+                            <a href="">
+                                <li>在线课程管理</li>
+                            </a>
+                            <a href="">
+                                <li>在线课程回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-shangpinguanli centerLogo"></span> 商品管理</h3>
+                        <ul class="show2" id="goodsNews">
+                            <a href="">
+                                <li>商品列表</li>
+                            </a>
+                            <a href="">
+                                <li>新增</li>
+                            </a>
+                            <a href="">
+                                <li>回收站</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <!-- 上方搜索功能 -->
+                <form>
+                    <div class="form-group form-inline fas">
+                        <input type="text" class="form-control searchName" id="exampleInputName2" placeholder="请输入姓名">
+                        <div class="dropdown form-group searchOp">
+                            <button class="btn btn-default dropdown-toggle ztBtn" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                全部状态
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="searchOps">
+                                <li><a href="#">全部状态</a></li>
+                                <li><a href="#">待审核</a></li>
+                                <li><a href="#">审核通过</a></li>
+                                <li><a href="#">审核未通过</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-info searchBtn iconfont">&#xe693;查询</button>
+                    </div>
+
+                </form>
+                <!-- 下方表格渲染 -->
+                <form>
+                    <div class="bord">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr class="active heg">
+                                    <th>学员姓名</th>
+                                    <th>课程名称</th>
+                                    <th>班级名称</th>
+                                    <th>教师</th>
+                                    <th>上课时间</th>
+                                    <th>申请时间</th>
+                                    <th>原因备注</th>
+                                    <th>审核状态</th>
+                                    <th>审核人</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cont">
+                                <!-- <tr>
+                                    <td>王一</td>
+                                    <td>一阶段</td>
+                                    <td>前端</td>
+                                    <td>Tina</td>
+                                    <td>2020-06-26 （周日）19:00-20:30</td>
+                                    <td>2020-05-01</td>
+                                    <td>待审核</td>
+                                    <td>已审核</td>
+                                    <td>王老师</td>
+                                    <td><span class="glyphicon glyphicon-asterisk">审核</span>
+                                    </td>
+                                </tr> -->
+                                <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">审核提示</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <div class="mod">
+                                                        <label class="radio-inline">申请审核：</label>
+                                                        <label class="radio-inline">
+                                                            <input class="pass" type="radio" name="optionsRadios"
+                                                                id="optionsRadios1" value="审核通过" checked>审核通过
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input class="pass" type="radio" name="optionsRadios"
+                                                                id="optionsRadios2" value="审核未通过">审核不通过
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn btn-success save"
+                                                    data-dismiss="modal">保存</button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <!-- 下部导航 -->
+                <div class="form-inline bar">
+                    <!-- 数据统计 -->
+                    <div class="inform"></div>
+
+
+                    <div class="options">
+                        <div class="selt">∨</div>
+                        <ul class="ull">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>
+                    </div>
+
+                    <!-- <select class="form-control selt">
+                     
+                    </select> -->
+                    <!-- 分页 -->
+                    <nav aria-label="Page navigation" class=" navs">
+                        <ul class="pagination uls">
+
+                        </ul>
+                    </nav>
+                </div>
+
+
+
+
+
+            </main>
+        </section>
+    </div>
+    <script src="../Js/center.js"></script>
+    <script src="../Js/wxy_Replacement.js"></script>
+
+</body>
+
+</html>
