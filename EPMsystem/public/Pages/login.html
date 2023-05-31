@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Untils/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/login.css">
+    <link rel="stylesheet" href="../Fonts/download/font_6t06haqxgzq/iconfont.css">
+    <script src="../Untils/jquery-3.6.4.min.js"></script>
+    <script src="../Untils/bootstrap.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="top">
+            <img src="../image/logo.png" alt="">
+            <h3>宿舍管理系统</h3>
+        </div>
+        <div id="bottom">
+            <div id="pBox">
+                <p>欢迎您！请登录</p>
+            </div>
+            <div id="formBox">
+                <form class="form-horizontal">
+                    <div class="form-group testbox">
+                        <label for="inputEmail3" class="col-sm-2 control-label">
+                            <span class="iconfont icon-user"></span>
+                        </label>
+                        <div class="col-sm-10 ">
+                            <input type="text" class="form-control login-user" name="username" id="inputEmail3" placeholder="账号">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="form-group testbox">
+                        <label for="inputPassword3" class="col-sm-2 control-label">
+                            <span class="iconfont icon-mima"></span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control login-pwd" name="pwd" id="inputPassword3" placeholder="密码">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-block loginBtn">登录</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <label class="radio-inline">
+                                <input value="学生" type="radio" name="status" id="inlineRadio1" value="option1"> 学生
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" name="status" id="inlineRadio2" value="option2"> 管理员
+                              </label>
+                              <p></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="text-align: center;">
+                <p>学生账号：101，密码：101</p>
+                <p>普通管理员账号：202，密码：202</p>
+                <p>超级管理员账号：201，密码：201</p>
+            </div>
+        </div>
+    </div>
+    <div class="alert success-box alert-success hide" role="alert">登录成功</div>
+    <div class="alert error-box alert-danger hide" role="alert">登录失败</div>
+    <script src="../Js/login.js"></script>
+</body>
+
+</html>
