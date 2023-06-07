@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body1">
+
+    <div id="app" class="app1">
+        <ul>
+            <li v-for="item in arr2">我喜欢阅读{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(v,i) in arr2"><span>{{i+1}}</span> 我喜欢的书是{{v}}</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>水果名</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="v in arr1">
+                    <td>{{v.name}}</td>
+                    <td>{{v.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul>
+            <li v-for="(v,key) in json">{{v}}--{{key}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="v in arr3">
+                <h2>{{v.type}}</h2>
+                <ol>
+                    <li v-for="v1 in v.name">{{v1}}</li>
+                </ol>
+            </li>
+            
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        /* 
+            循环语句
+            v-for="v in 数组"
+            v-for="(v,i)" in 数组
+            v-for="(v,k) in json对象"
+        */
+
+        new Vue({
+            el: '#app',
+            data: {
+                arr1: [
+                    { name: 'apple', price: 12 },
+                    { name: 'banana', price: 20 },
+                    { name: 'orange', price: 10 },
+                    { name: 'pear', price: 30 }],
+                arr2: ['三国演义', '水浒传', '西游记', '红楼梦'],
+                json:{a:1,b:2,c:3},
+                arr3:[
+                    {type:'电脑',name:['苹果','联想','惠普']},
+                    {type:'手机',name:['苹果','华为','小米']},
+                    {type:'电视',name:['tcl','索尼','长虹']}
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

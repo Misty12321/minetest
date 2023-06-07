@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/dormitory.css" />
+    <link
+      rel="stylesheet"
+      href="../fonts/download/font_kwmj3sd7aff/iconfont.css"
+    />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid home">
+      <header id="head">
+            
+      </header>
+      <section>
+        <nav>
+          <ul id="nav">
+            <!-- <li>
+                        <h3 id="hot"><span class="iconfont icon-zhuye centerLogo"></span>公告主页</h3>
+                    </li>
+                    <li>
+                        <h3 id="amusement"><span class="iconfont icon-sushe centerLogo"></span> 宿舍管理</h3>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-xueshengguanli centerLogo"></span> 学生管理</h3>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-shequguanli_gonggaoguanli centerLogo"></span> 公告管理
+                        </h3>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-admin-manage centerLogo"></span> 管理员管理</h3>
+                    </li> -->
+          </ul>
+        </nav>
+        <main>
+          <div class="main-header">
+            <div class="form-inline" role="form">
+              <div class="form-group">
+                <label class="sr-only" for="name">名称</label>
+                <input
+                  type="text"
+                  class="form-control admin-name"
+                  id="name"
+                  placeholder="请输入输入管理员名称"
+                />
+              </div>
+              <button type="button" class="btn search-btn">搜索</button>
+              <button type="reset" class="btn reset-btn">重置</button>
+              <button
+                class="btn addDor"
+                data-toggle="modal"
+                data-target="#addModal"
+              >
+                添加管理员
+              </button>
+            </div>
+          </div>
+          <div class="madin-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>编号</th>
+                  <th>姓名</th>
+                  <th>账号</th>
+                  <th>类型</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                                <td>001</td>
+                                <td>yiyi</td>
+                                <td>20302133</td>
+                                <td>超级管理员</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <ul class="pagination pagination-lg">
+            <!-- <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li> -->
+          </ul>
+        </main>
+      </section>
+    </div>
+
+    <!-- 添加学生 -->
+    <div
+      class="modal fade"
+      id="addModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              
+            </button>
+            <h4 class="modal-title" id="myModalLabel">添加管理员</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" style="display: flex">
+                <label
+                  for="adminName"
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >姓名</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="adminName"
+                  placeholder="请输入姓名"
+                />
+              </div>
+              <div class="form-group" style="display: flex">
+                <label
+                  for="adminZh"
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >账号</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="adminZh"
+                  placeholder="仅支持数字类型"
+                />
+              </div>
+              <div class="form-group" style="display: flex">
+                <label
+                  for="adminPwd"
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >密码</label
+                >
+                <input
+                  type="password"
+                  class="form-control adminpass"
+                  id="adminPwd"
+                  placeholder="请输入账号"
+                />
+              </div>
+              <div class="form-group" style="display: flex">
+                <label
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >类型</label
+                >
+                <select class="form-control add-classState">
+                  <option value="超级管理员">超级管理员</option>
+                  <option value="普通管理员">普通管理员</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary add-btn" data-dismiss="modal">
+              确定
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
+    <!-- 修改admin -->
+    <div
+      class="modal fade "
+      id="updateModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              
+            </button>
+            <h4 class="modal-title" id="myModalLabel">修改管理员</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" style="display: flex">
+                <label
+                  for="adminName"
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >姓名</label
+                >
+                <input
+                  type="text"
+                  class="form-control edit-name"
+                  id="adminName"
+                  placeholder="请输入姓名"
+                />
+              </div>
+              <div class="form-group" style="display: flex">
+                <label
+                  for="adminZh"
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >账号</label
+                >
+                <input
+                  type="text"
+                  class="form-control edit-username"
+                  id="adminZh"
+                  placeholder="仅支持数字类型"
+                />
+              </div>
+              <div class="form-group" style="display: flex">
+                <label
+                  for="adminPwd"
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >密码</label
+                >
+                <input
+                  type="password"
+                  class="form-control edit-password"
+                  id="adminPwd"
+                  placeholder="请输入账号"
+                />
+              </div>
+              <div class="form-group" style="display: flex">
+                <label
+                  style="
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                  >类型</label
+                >
+                <select class="form-control edit-State">
+                  <option value="超级管理员">超级管理员</option>
+                  <option value="普通管理员">普通管理员</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary confirm-edit edit-btn" data-dismiss="modal">
+              确定
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
+    <!-- 删除admn -->
+    <div
+      class="modal fade"
+      id="delModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              
+            </button>
+            <h4 class="modal-title" id="myModalLabel">删除管理员</h4>
+          </div>
+          <div class="modal-body">确定删除吗？</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button
+              type="button"
+              class="confirm-deletion btn btn-primary"
+              data-dismiss="modal"
+            >
+              确定
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
+
+    <script src="../js/ajax.js"></script>
+    <script src="../js/publicfunction.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+let adminName = document.querySelector(".admin-name");
+let searchBtn = document.querySelector(".search-btn");
+let tbody = document.querySelector("tbody");
+let pagination = document.querySelector(".pagination");
+let resetBtn = document.querySelector(".reset-btn");
+let confirmDeletion = document.querySelector(".confirm-deletion");
+let confirmEdit = document.querySelector(".confirm-edit");
+let addBtn=document.querySelector(".add-btn");
+let editBtn=document.querySelector(".edit-btn");
+
+
+let total
+let delid;
+let editid;
+let str;
+let search='';
+let count = 5;
+let page = 1;
+
+
+//请求数据
+function get() {
+  ajax({
+    url: "/getadmin",
+    data: {
+      page: page,
+      count: count,
+      search: search,
+    },
+    success: function (res) {
+      console.log(1, res);
+
+      if (res.code == 200) {
+         console.log(res.data) 
+          let str = "";
+        for (let i = 0; i < res.data.length; i++) {
+          str += `<tr data-id="${res.data[i].t_id}">
+                          <td>${i + 1}</td>
+                          <td>${res.data[i].t_name}</td>
+                          <td>${res.data[i].t_username}</td>
+                          <td>${
+                            res.data[i].t_type == 0
+                              ? "宿舍管理员"
+                              : "超级管理员"
+                          }</td>
+                          <td>
+                              <span class="del-btn" data-toggle="modal" data-target="#delModal">删除</span>
+                              <span class="edit-btn" data-toggle="modal" data-target="#updateModal">修改</span>
+                          </td>
+                      </tr>`;
+        }
+        tbody.innerHTML = str;
+
+        let n = Math.ceil(res.total / count);
+        let left = '<li><a  class="left" href="#">&laquo;</a></li>';
+        let right = '<li><a class="right" href="#">&raquo;</a></li>';
+        let pageStr = "";
+        for (let i = 1; i <= n; i++) {
+          if (i == page) {
+            pageStr += `<li class="active"><a href="javascript:;">${i}</a></li>`;
+          } else {
+            pageStr += `<li><a href="javascript:;">${i}</a></li>`;
+          }
+        }
+        pagination.innerHTML = left + pageStr + right;
+      }
+    },
+  });
+}
+
+get();
+//渲染侧边栏
+Rheader()
+RSidebar();
+//搜索
+searchBtn.addEventListener("click", function () {
+  page=1;
+  search=adminName.value;
+  get();
+});
+/* 分页的功能 */
+pagination.addEventListener('click', function(ev) {
+if (ev.target.className == 'left') {
+  if (page > 0) {
+      page--;
+      get();
+  }
+} else if (ev.target.className == 'right') {
+  if (page < ev.target.parentNode.parentNode.children.length - 2) {
+      page++;
+      get();
+  }
+} else {
+  page = ev.target.innerText;
+  console.log(page);
+  get();
+}
+})
+//重置
+resetBtn.addEventListener('click',function(){
+      adminName.value='';
+      search='';
+      page=1;
+      get();
+  })
+//删除 确定id
+  tbody.addEventListener('click',function(ev){
+      if(ev.target.className=='del-btn'){
+          delid=ev.target.parentNode.parentNode.dataset.id;
+          
+      }
+      else{
+          if(ev.target.className=='edit-btn');
+          editid=ev.target.parentNode.parentNode.dataset.id;
+      }
+  })
+//确定删除
+confirmDeletion.addEventListener('click',function(){
+  ajax({
+      url:'/deladmin',
+      method:'post',
+      data:{
+          id:delid
+      }
+  ,
+  success:function(res){
+      if(res.code==200){
+          alert('删除成功');
+          get();
+      }
+  }
+  })
+})
+
+
+//添加
+addBtn.addEventListener('click',function(){
+  let addname=document.querySelector("#adminName")
+  let adduser=document.querySelector("#adminZh")
+  let addpassword=document.querySelector(".adminpass")
+  let addstate=document.querySelector(".add-classState")
+  
+  if(addname.value&&adduser.value&&addpassword.value)
+  {
+  ajax({
+      url:'/addadmin',
+      method:'post',
+      data:{
+          username:adduser.value,
+          password:addpassword.value,
+          uname:addname.value,
+          type:addstate.value,
+          
+      },
+      success:function(res){
+          if(res.code==200){
+          alert('添加成功');
+          get();
+      }
+      }
+      
+  })}
+  else(
+      alert('不能为空')
+  )
+})
+//修改
+editBtn.addEventListener('click',function(){
+  console.log(11111,editid);
+  let editname=document.querySelector(".edit-name")
+  console.log(editname.value)
+  let edituser=document.querySelector(".edit-username")
+  console.log(edituser.value)
+  let editpassword=document.querySelector(".edit-password")
+  console.log(editpassword.value)
+  let editstate=document.querySelector(".edit-State")
+  console.log(editstate.value)
+  if(editname.value&&edituser.value&&editpassword.value){
+  ajax({
+      url:'/editadmin',
+      method:'post',
+      data:{
+          username:edituser.value,
+          password:editpassword.value,
+          ename:editname.value,
+          type:editstate.value,
+          id:editid
+      },
+      success:function(res){
+          if(res.code==200){
+          alert('修改成功');
+          get();
+      }
+      if(res.code==500){
+        alert('修改失败,账号已存在')
+        get();
+      }
+      }
+  })}
+  else{
+      alert('不能为空')
+  }
+})
+/* 
+/deladmin
+post
+data id
+res {code,msg:}
+*/
+
+    </script>
+  </body>
+</html>
+<!-- 
+    count 5   
+
+total 1           1
+      5           1
+      6           2
+      10          2
+      11          3
+      total      Math.ceil(total/count)
+
+
+ -->

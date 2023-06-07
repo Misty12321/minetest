@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/dormitory.css" />
+    <link
+      rel="stylesheet"
+      href="../fonts/download/font_kwmj3sd7aff/iconfont.css"
+    />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </head>
+
+<body>
+    <div class="container-fluid home">
+        <header id="head">
+            
+        </header>
+        <section>
+            <nav>
+                <ul id="nav">
+
+            </nav>
+            <main>
+                <div class="main-header">
+                    <div class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="name">名称</label>
+                            <input type="text" class="form-control noticetitle" id="name" placeholder="请输入公告标题">
+                        </div>
+                        <button type="submit" class="btn search-btn">搜索</button>
+                        <button type="reset" class="btn resetbtn">重置</button>
+                        <button class="btn addDor" data-toggle="modal" data-target="#addModal">添加公告</button>
+                    </div>
+                </div>
+                <div class="madin-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>公告编号</th>
+                                <th>公告标题</th>
+                                <th>公告内容</th>
+                                <th>发布时间</th>
+                                <th>发布人</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <!-- <tr>
+                                <td>001</td>
+                                <td>六一儿童节</td>
+                                <td>六一儿童节</td>
+                                <td>yiyi</td>
+                                <td>2023-05-29</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>六一儿童节</td>
+                                <td>六一儿童节</td>
+                                <td>yiyi</td>
+                                <td>2023-05-29</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>六一儿童节</td>
+                                <td>六一儿童节</td>
+                                <td>yiyi</td>
+                                <td>2023-05-29</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>六一儿童节</td>
+                                <td>六一儿童节</td>
+                                <td>yiyi</td>
+                                <td>2023-05-29</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>六一儿童节</td>
+                                <td>六一儿童节</td>
+                                <td>yiyi</td>
+                                <td>2023-05-29</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>六一儿童节</td>
+                                <td>六一儿童节</td>
+                                <td>yiyi</td>
+                                <td>2023-05-29</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="pagination  pagination-lg">
+                   <!--  <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li> -->
+                </ul>
+            </main>
+        </section>
+    </div>
+
+    <!-- 添加admin -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">添加公告</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group" style="display: flex;">
+                            <label for="adminName"
+                                style="width: 50px;display: flex;justify-content: center;align-items: center;">公告标题</label>
+                            <input type="text" class="form-control addtitle" id="adminName" placeholder="公告标题">
+                        </div>
+                        <div class="form-group" style="display: flex;">
+                            <label for="adminZh"
+                                style="width: 50px;display: flex;justify-content: center;align-items: center;">公告内容</label>
+                            <input type="text" class="form-control addcontect" id="adminZh" placeholder="公告内容">
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary addbtn" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <!-- 修改admin -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">修改公告</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group" style="display: flex;">
+                            <label for="adminName"
+                                style="width: 50px;display: flex;justify-content: center;align-items: center;">公告标题</label>
+                            <input type="text" class="form-control edtitle" id="adminName" placeholder="公告标题">
+                        </div>
+                        <div class="form-group" style="display: flex;">
+                            <label for="adminZh"
+                                style="width: 50px;display: flex;justify-content: center;align-items: center;">公告内容</label>
+                            <input type="text" class="form-control edcontent" id="adminZh" placeholder="公告内容">
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary editbtn" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <!-- 删除admn -->
+    <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">删除公告</h4>
+                </div>
+                <div class="modal-body">
+                    确定删除吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default " data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary delbtn" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/publicfunction.js"></script>
+    <script>
+    let page = 1;
+    let count = 5;
+    let search = '';
+    let otbody=document.querySelector('.tbody')
+    let pagination=document.querySelector('.pagination')
+    let searchBtn = document.querySelector(".search-btn")
+    let noticetitle=document.querySelector('.noticetitle')
+    let resetbtn=document.querySelector('.resetbtn')
+    let addbtn=document.querySelector('.addbtn')
+    let delbtn=document.querySelector('.delbtn')
+    let oeditbtn=document.querySelector('.editbtn')
+    let delid;
+
+    let editid;
+    Rheader()
+    RSidebar();
+    getnotice();
+        
+
+    function getnotice(){
+
+            ajax({
+                url:'/getnotice',
+                data:{
+                    page: page,
+                    count: count,
+                    search: search,
+                },
+                success:function(res){
+                    if(res.code==200){
+                        let str = '';
+                        for (let i = 0; i < res.data.length; i++) {
+                            str += `<tr data-id="${res.data[i].n_id}">
+                         <td>${res.data[i].n_id}</td>
+                            <td>${res.data[i].n_title}</td>
+                          <td>${res.data[i].n_content}</td>
+                          <td>${res.data[i].n_updatetime}</td>
+                          <td>${res.data[i].t_name}</td>
+                          <td>
+                            <span data-toggle="modal" data-target="#delModal" class='del-btn'>删除</span>
+                            <span data-toggle="modal" data-target="#updateModal" class='edit-btn'>修改</span>
+                          </td>
+                      </tr>`;
+                        }
+                        otbody.innerHTML = str;
+                        let n = Math.ceil(res.total / count);
+        let left = '<li><a  class="left" href="#">&laquo;</a></li>';
+        let right = '<li><a class="right" href="#">&raquo;</a></li>';
+        let pageStr = "";
+        for (let i = 1; i <= n; i++) {
+          if (i == page) {
+            pageStr += `<li class="active"><a href="javascript:;">${i}</a></li>`;
+          } else {
+            pageStr += `<li><a href="javascript:;">${i}</a></li>`;
+          }
+        }
+        pagination.innerHTML = left + pageStr + right;
+
+                        
+                    }
+
+
+                }
+            })
+
+            
+        }
+
+    pagination.addEventListener('click', function (ev) {
+            if (ev.target.className == 'left') {
+                if (page > 1) {
+                    page--;
+                    getnotice();
+                }
+            } else if (ev.target.className == 'right') {
+                if (page < ev.target.parentNode.parentNode.children.length - 2) {
+                    page++;
+                    getnotice();
+                }
+            } else {
+                page = ev.target.innerText;
+                console.log(page);
+                getnotice();
+            }
+        })
+    
+    searchBtn.addEventListener('click', function () {
+            page = 1;
+            search = noticetitle.value
+            console.log(search)
+            getnotice();
+            noticetitle.value='';
+        })
+    
+    resetbtn.addEventListener('click', function () {
+            page = 1;
+            search = ''
+            noticetitle.value=''
+            
+            getnotice();
+        })
+ 
+    addbtn.addEventListener('click',function(){
+        let addcontect=document.querySelector('.addcontect')
+        let user=JSON.parse(sessionStorage.getItem("user"));
+        let timenow=getNowTime();
+        console.log(timenow)
+        console.log(typeof(user.t_id))
+        console.log(addcontect.value)
+        let addtitle=document.querySelector('.addtitle')
+        ajax({
+            url:'/addnotice',
+            method:'post',
+            data:{
+                id:user.t_id,
+                addtitle:addtitle.value,
+                addcontent:addcontect.value,
+                updatetime:timenow
+            },
+            success:function(res){
+                if(res.code==200){
+                    alert('添加成功')
+                    getnotice();
+                }
+            }
+
+        })
+    })
+    
+     //确定删除哪行
+     otbody.addEventListener('click',function(ev){
+      if(ev.target.className=='del-btn'){
+          delid=ev.target.parentNode.parentNode.dataset.id;
+          console.log(delid)
+      }
+      else{
+          if(ev.target.className=='edit-btn');
+          editid=ev.target.parentNode.parentNode.dataset.id;
+          
+      }
+  })
+
+    
+    delbtn.addEventListener('click',function(){
+        ajax({
+            url:'/delnotice',
+            method:'post',
+            data:{
+                delid:delid
+            },
+            success:function(res){
+                if(res.code==200){
+                    alert('删除成功')
+                    getnotice();
+                }
+            }
+        })
+    })
+    
+    oeditbtn.addEventListener('click',function(){
+        let edtitle=document.querySelector('.edtitle')
+        let edcontent=document.querySelector('.edcontent')
+        ajax({
+            url:'/editnotice',
+            method:'post',
+            data:{
+                editid:editid,
+                edtitle:edtitle.value,
+                edcontent:edcontent.value
+            },
+            success:function(res){
+                if(res.code==200){
+                    alert('修改成功')
+                    getnotice();
+                }
+            }
+        })
+    })
+    
+    console.log(getNowTime());
+
+//获取当前时间
+function getNowTime() {
+    let date = new Date();
+    //年 getFullYear()：四位数字返回年份
+    let year = date.getFullYear();  //getFullYear()代替getYear()
+    //月 getMonth()：0 ~ 11
+    let month = date.getMonth() + 1;
+    //日 getDate()：(1 ~ 31)
+    let day = date.getDate();
+    //时 getHours()：(0 ~ 23)
+    let hour = date.getHours();
+    //分 getMinutes()： (0 ~ 59)
+    let minute = date.getMinutes();
+    //秒 getSeconds()：(0 ~ 59)
+    let second = date.getSeconds();
+
+    let time = year + '-' + addZero(month) + '-' + addZero(day) + ' ' + addZero(hour) + ':' + addZero(minute) + ':' + addZero(second);
+    return time;
+}
+
+
+//小于10的拼接上0字符串
+function addZero(s) {
+    return s < 10 ? ('0' + s) : s;
+}
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/dormitory.css" />
+    <link rel="stylesheet" href="../fonts/download/font_kwmj3sd7aff/iconfont.css" />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid home">
+        <header id="head">
+            
+        </header>
+        <section>
+            <nav>
+                <ul id="nav">
+                    <!-- <li>
+                        <h3 id="hot"><span class="iconfont icon-zhuye centerLogo"></span>公告主页</h3>
+                    </li>
+                    <li>
+                        <h3 id="amusement"><span class="iconfont icon-sushe centerLogo"></span> 宿舍管理</h3>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-xueshengguanli centerLogo"></span> 学生管理</h3>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-shequguanli_gonggaoguanli centerLogo"></span> 公告管理
+                        </h3>
+                    </li>
+                    <li>
+                        <h3 id="goods"><span class="iconfont icon-admin-manage centerLogo"></span> 管理员管理</h3>
+                    </li>-->
+                </ul>
+            </nav>
+            <main>
+                <div class="main-header">
+                    <div class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="name">名称</label>
+                            <input type="text" class="form-control student-name" id="name" placeholder="请输入输入学生名称">
+                        </div>
+                        <button type="button" class="btn search-btn">搜索</button>
+                        <button type="reset" class="btn reset-btn">重置</button>
+                        <button class="btn addDor" data-toggle="modal" data-target="#addModal">添加学生</button>
+                    </div>
+                </div>
+                <div class="madin-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>账号</th>
+                                <th>学生所属宿舍</th>
+                                <th>宿舍水电费余额(元)</th>
+                                <th>宿舍状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--  <tr>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                    <span>发起催款申请</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>coco</td>
+                                <td>20302133</td>
+                                <td>2621</td>
+                                <td>100元</td>
+                                <td>催款中</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                    <span>发起催款申请</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>coco</td>
+                                <td>20302133</td>
+                                <td>2621</td>
+                                <td>100元</td>
+                                <td>催款中</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                    <span>发起催款申请</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>coco</td>
+                                <td>20302133</td>
+                                <td>2621</td>
+                                <td>100元</td>
+                                <td>催款中</td>
+                                <td>
+                                    <span data-toggle="modal" data-target="#delModal">删除</span>
+                                    <span data-toggle="modal" data-target="#updateModal">修改</span>
+                                    <span>发起催款申请</span>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="pagination  pagination-lg">
+
+                </ul>
+            </main>
+        </section>
+    </div>
+
+    <!-- 添加宿舍 -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">添加学生</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="dorBh">学号</label>
+                            <input type="text" class="form-control" id="dorBh" placeholder="仅支持数字类型">
+                        </div>
+                        <div class="form-group">
+                            <label for="dorName">姓名</label>
+                            <input type="text" class="form-control" id="dorName" placeholder="请输入名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="dorMoney">账号</label>
+                            <input type="text" class="form-control" id="dorMoney" placeholder="仅支持数字类型">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">密码</label>
+                            <input type="text" class="form-control" id="pwd" placeholder="仅支持数字类型">
+                        </div>
+                        <div class="form-group" style="display: flex;">
+                            <label
+                                style="width: 50px;display: flex;justify-content: center;align-items: center;">所属宿舍</label>
+                            <select class="form-control addS-dormitory initdor">
+                                <!-- <option value=1>一宿舍</option>
+                                <option value=2>二宿舍</option>
+                                <option value=3>三宿舍</option> -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary add-btn" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <!-- 修改宿舍 -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">修改宿舍</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="dorBh">学号</label>
+                            <input type="text" class="form-control" id="editxuehao" placeholder="仅支持数字类型" >
+                        </div>
+                        <div class="form-group">
+                            <label for="dorBh">姓名</label>
+                            <input type="text" class="form-control" id="editname" placeholder="仅支持数字类型" >
+                        </div>
+                        <div class="form-group">
+                            <label for="dorBh">账号</label>
+                            <input type="text" class="form-control" id="editusername" placeholder="仅支持数字类型" >
+                        </div>
+                        <div class="form-group">
+                            <label for="dorBh">密码</label>
+                            <input type="text" class="form-control" id="edituserpass" placeholder="仅支持数字类型" >
+                        </div>
+                        
+                       
+                        <div class="form-group">
+                            <label for="dorName">更改后的宿舍编号</label>
+                            <select class="form-control editS-dormitory initdor2">
+                                <!-- <option value=1>一宿舍</option>
+                                <option value=2>二宿舍</option>
+                                <option value=3>三宿舍</option> -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary edit-btnsure" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <!-- 删除宿舍 -->
+    <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">删除宿舍</h4>
+                </div>
+                <div class="modal-body">
+                    确定删除吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary del-btnsure" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/publicfunction.js"></script>
+    <script>
+      
+        let tbody = document.querySelector("tbody");
+        let pagination = document.querySelector(".pagination")
+        let searchBtn = document.querySelector(".search-btn")
+        let studentname = document.querySelector(".student-name")
+       
+        let resetbtn = document.querySelector(".reset-btn")
+        let addbtn = document.querySelector(".add-btn")
+        let delbtnsure = document.querySelector(".del-btnsure")
+        let editbtnsure =document.querySelector(".edit-btnsure")
+      
+        let total;
+        let delid;
+        let delid2;
+        let editid;
+        let str;
+        let search = '';
+        let count = 5;
+        let page = 1;
+        let initdor = document.querySelector('.initdor')
+        let initdor2 =document.querySelector('.initdor2')
+        RSidebar();
+        Rheader();
+      
+        getstudent()
+        //初始渲染
+        function getstudent() {
+            ajax({
+                url: '/studentget',
+                post: 'get',
+                data: {
+                    page: page,
+                    count: count,
+                    search: search,
+                },
+                success: function (res) {
+                    if (res.code == 200) {
+         console.log(res.data) 
+          let str = "";
+        for (let i = 0; i < res.data.length; i++) {
+          str += `<tr data-id="${res.data[i].s_id}">
+                          <td>${res.data[i].s_id}</td>
+                          <td>${res.data[i].s_name}</td>
+                          <td>${res.data[i].s_username}</td>
+                          <td data-id="${res.data[i].s_d_id}">${res.data[i].d_name}</td>
+                          <td>${res.data[i].d_balance}</td>
+                          <td>${
+                            res.data[i].d_type == 1
+                              ? "未欠费"
+                              : "已欠费"
+                          }</td>
+                          <td>
+                            <span class='del-btn' data-toggle="modal" data-target="#delModal">删除</span>
+                            <span class='edit-btn' data-toggle="modal" data-target="#updateModal">修改</span>
+                            <span>发起催款申请</span>
+                          </td>
+                      </tr>`;
+        }
+        tbody.innerHTML = str;
+
+        let n = Math.ceil(res.total / count);
+        let left = '<li><a  class="left" href="#">&laquo;</a></li>';
+        let right = '<li><a class="right" href="#">&raquo;</a></li>';
+        let pageStr = "";
+        for (let i = 1; i <= n; i++) {
+          if (i == page) {
+            pageStr += `<li class="active"><a href="javascript:;">${i}</a></li>`;
+          } else {
+            pageStr += `<li><a href="javascript:;">${i}</a></li>`;
+          }
+        }
+        pagination.innerHTML = left + pageStr + right;
+
+        
+        let dorstr=''
+        for(let i=0;i<res.dormname.length;i++){
+            dorstr+=`<option value=${res.dormname[i].d_id}>${res.dormname[i].d_name}</option>`
+        }
+        initdor.innerHTML=dorstr;
+        initdor2.innerHTML=dorstr;
+      }
+                }
+            })
+        }
+
+        //分页
+        pagination.addEventListener('click', function (ev) {
+            if (ev.target.className == 'left') {
+                if (page > 1) {
+                    page--;
+                    getstudent();
+                }
+            } else if (ev.target.className == 'right') {
+                if (page < ev.target.parentNode.parentNode.children.length - 2) {
+                    page++;
+                    getstudent();
+                }
+            } else {
+                page = ev.target.innerText;
+                console.log(page);
+                getstudent();
+            }
+        })
+
+        //搜索
+        searchBtn.addEventListener('click', function () {
+            page = 1;
+            search = studentname.value
+            console.log(search)
+            getstudent();
+            studentname.value='';
+        })
+        //重置
+        resetbtn.addEventListener('click', function () {
+            page = 1;
+            search = ''
+            studentname.value=''
+            
+            getstudent();
+        })
+        //添加
+        addbtn.addEventListener('click', function () {
+            let addSNumber = document.querySelector('#dorBh')
+            let addSName = document.querySelector('#dorName')
+            let addSUsername = document.querySelector('#dorMoney')
+            let addSPassword = document.querySelector('#pwd')
+            let addSDormitory = document.querySelector('.addS-dormitory')
+
+            if (addSNumber.value && addSName.value && addSUsername.value && addSPassword.value && addSDormitory.value) {
+                ajax({
+                    url: '/addstudent',
+                    method: 'post',
+                    data: {
+                        SNumber: addSNumber.value,
+                        SName: addSName.value,
+                        SUsername: addSUsername.value,
+                        SPassword: addSPassword.value,
+                        SDormitory: addSDormitory.value,
+                        maxnum:4
+                    },
+                    success: function (res) {
+                        if (res.code == 200) {
+                            alert('添加成功');
+                            getstudent();
+                        }
+                        else{
+                            if(res.code==501){
+                                alert('已超出该宿舍最大人数，无法继续添加');
+                            }
+                        }
+                    }
+                })
+            }
+
+            else {
+                alert('不能为空')
+            }
+
+        })
+        //确定删除哪行
+        tbody.addEventListener('click',function(ev){
+      if(ev.target.className=='del-btn'){
+          delid=ev.target.parentNode.parentNode.dataset.id;
+          delid2=ev.target.parentNode.parentNode.children[3].dataset.id;
+      }
+      else{
+          if(ev.target.className=='edit-btn');
+          editid=ev.target.parentNode.parentNode.dataset.id;
+          editid2=ev.target.parentNode.parentNode.children[3].dataset.id
+      }
+  })
+        //执行删除
+        delbtnsure.addEventListener('click',function(){
+            ajax({
+       url:'/delstudent',
+        method:'post',
+      data:{
+        stuid:delid,
+        dorid:delid2
+      }
+  ,
+  success:function(res){
+      if(res.code==200){
+          alert('删除成功');
+          getstudent();
+      }
+  }
+  })
+        })
+        //修改
+        editbtnsure.addEventListener('click',function(){
+            let editsusheming=document.querySelector('#editsusheming')
+            let editxuehao=document.querySelector('#editxuehao')
+            let editname=document.querySelector("#editname")
+            let editusername=document.querySelector('#editusername')
+            let edituserpass=document.querySelector('#edituserpass')
+            let editSDormitory = document.querySelector('.editS-dormitory')
+           ajax({
+                url:'/editstu',
+                method:'post',
+                data:{
+                    editid:editid,
+                    editid2:editid2,
+                    editsusheming:editSDormitory.value,
+                    editname:editname.value,
+                    editusername:editusername.value,
+                    edituserpass:edituserpass.value,
+                    editxuehao:editxuehao.value
+                },
+                success:function(res){
+                    if(res.code==200){
+                        alert('修改成功')
+                        getstudent();
+                    }
+                }
+
+                
+            }
+            )
+        })
+   
+   </script>
+</body>
+
+</html>

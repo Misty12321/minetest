@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../fonts/download/font_6t06haqxgzq/iconfont.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/ajax.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="top">
+            <img src="../image/logo.png" alt="">
+            <h3>宿舍管理系统</h3>
+        </div>
+        <div id="bottom">
+            <div id="pBox">
+                <p>欢迎您！请登录</p>
+            </div>
+            <div id="formBox">
+                <div class="form-horizontal">
+                    <div class="form-group ">
+                        <label for="inputEmail3" class="col-sm-2 control-label">
+                            <span class="iconfont icon-user"></span>
+                        </label>
+                        <div class="col-sm-10 ">
+                            <input type="text" class="form-control login-user" name="username" id="inputEmail3"
+                                placeholder="账号">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="inputPassword3" class="col-sm-2 control-label">
+                            <span class="iconfont icon-mima"></span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control login-pwd" name="pwd" id="inputPassword3"
+                                placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group sf">
+                        <div style="margin-left: -40px;">
+                            <label for="inputPassword3" class="control-label" style="padding-top: 0;">
+                                身份
+                                <!-- <span class="iconfont icon-mima"></span> -->
+                            </label>
+                        </div>
+                        <div class="sf-div">
+                            <div style="display: flex;align-items: center;">
+                                <div><span>管理员</span></div>
+                                <div><input type="radio" name="status" value="管理员" id=""></div>
+                            </div>
+                            <div style="display: flex;align-items: center;">
+                                <div><span>学生</span></div>
+                                <div><input value="学生" type="radio" name="status" id=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-block loginBtn">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert success-box alert-success hide" role="alert">登录成功</div>
+    <div class="alert error-box alert-danger hide" role="alert">登录失败</div>
+
+    <script>
+        let oUser = document.querySelector('.login-user');
+        let oPass = document.querySelector('.login-pwd');
+        let oBtn = document.querySelector('.loginBtn');
+
+        oBtn.addEventListener('click', function () {
+            ajax({
+                url:'/login',
+                method:'post',
+                data:{
+                    username:oUser.value,
+                    password:oPass.value,
+                    type:document.querySelector('[name="status"]:checked').value
+                },
+                success:function(res){
+                    if(res.code==200){
+                        alert(res.msg);
+                        console.log(res.data);
+                        sessionStorage.setItem('user',JSON.stringify(res.data));
+                        console.log(typeof(JSON.stringify(res.data)))
+                         window.location.href='../page/student.html'
+                    }else{
+                        alert(res.msg)
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/dormitory.css" />
+    <link rel="stylesheet" href="../fonts/download/font_kwmj3sd7aff/iconfont.css" />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="inner">
+  
+</div>
+<script src="../js/ajax.js"></script>
+<script>
+let oinner=document.querySelector('.inner')
+let updatepageurl;
+let str=''
+str=`  <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="myModalLabel">设置</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="dorBh">昵称</label>
+                        <input type="text" class="form-control" id="updatename" placeholder="仅支持数字类型" >
+                    </div>
+                    <div class="form-group">
+                        <label for="dorBh">账号</label>
+                        <input type="text" class="form-control" id="updateusername" placeholder="仅支持数字类型" >
+                    </div>
+                    <div class="form-group">
+                        <label for="dorBh">密码</label>
+                      
+                        <input type="text" class="form-control" id="updatepassword" placeholder="" >
+                    </div>
+                    <div class="form-group">
+                        <label for="dorBh">权限</label>
+                        <input type="text" class="form-control" id="editusername" placeholder="" >
+                    </div>
+                    <div class="form-group">
+                        <label for="dorBh">上传头像</label>
+                        <input type="file" class="form-control updateurls" id="file" placeholder="" style='display:none'>
+                        <div class="upload form-control">点击上传文件</div>
+                    </div>
+                    
+                
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default cancle" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary update-btnsure" data-dismiss="modal">提交修改</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->`
+oinner.innerHTML=str;
+let updateusername=document.querySelector('#updateusername')
+let updatepassword=document.querySelector('#updatepassword')
+let updatebtnsure=document.querySelector('.update-btnsure')
+
+let cancle=document.querySelector('.cancle')
+let ofile = document.querySelector('#file');
+let upload = document.querySelector('.upload');
+let user = JSON.parse(sessionStorage.getItem("user"));
+let updatename=document.querySelector('#updatename')
+
+let usertid;
+            let usersid;
+            let usertname;
+            let usersname;
+        //点div让文件上传的触发一次点击效果
+        upload.addEventListener('click',function(){
+            ofile.click();
+        })
+        // file表单和select表单元素事件要加onchange
+        //file获取选中的文件，.value获取出来的路径是假的
+        //要用.files 获取的是一个文件的列表。因为上传可以多选
+        ofile.addEventListener('change', function () {
+            
+            //文件格式不能直接在img上使用。需要读取文件内容，转化成标签认识的。
+            //文件阅读对象
+            let fileReader = new FileReader()
+            /* 
+                fileReader.readAsDataURL    转成数据地址（bese64地址）
+                           readAsArrayBuffer 转成数据流文件
+                           readAsBinaryString 转成二进制字符串
+            */
+            //在文件读取的时候，因为文件体积有可能非常大。不让他进行阻塞加载。
+            fileReader.readAsDataURL(ofile.files[0]);
+            updatebtnsure.addEventListener('click',function(){
+                x();
+
+            console.log(ofile.files[0].name)
+            console.log(updateusername.value)
+            console.log(updatepassword.value)
+            console.log(user.t_id)
+            
+            if(user.t_type==1||user.t_type==0){
+                usertid=user.t_id
+                console.log(usertid)
+
+            }
+            else{
+                usersid=user.s_id
+  
+            }
+            
+                ajax({
+                    url:'/update',
+                    method:'post',
+                    data:{
+                        usertid:usertid,
+                        usersid:usersid,
+                        updatename:updatename.value,
+                        updateusername:updateusername.value,
+                        updatepassword:updatepassword.value,
+                        updateimagename:ofile.files[0].name,
+                        updatepageurl:ofile.files[0].name
+                    },
+                    success:(res)=>{
+                        if(res.code==200){
+                            console.log(res.data)
+                            sessionStorage.setItem('user',JSON.stringify(res.data));
+                            alert('修改成功')
+                            window.location.href='../page/student.html'
+                        }
+                    }
+
+                })
+
+                
+            })
+
+        })
+
+        cancle.addEventListener('click',()=>{
+            window.location.href='../page/student.html'
+        })
+
+
+
+
+        function x (){
+            let xhr = new XMLHttpRequest();
+            xhr.open('post','/upload',true);
+            //创建文件格式
+            let formdata=new FormData();
+            formdata.append('file',ofile.files[0])
+            // 如果post发现数据是formdata，自动设置请求头
+            xhr.send(formdata);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+                        console.log(xhr.responseText);
+                    }else{
+                       
+                    }
+                }
+            }
+        }
+</script>
+</body>
+</html>
