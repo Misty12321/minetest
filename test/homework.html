@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1></h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>物品名</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in items" :key="index">
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <input v-model="item.price" @input="updateSubtotal(item)">
+                    </td>
+                    <td>
+                        <input v-model="item.quantity" @input="updateSubtotal(item)">
+                    </td>
+                    <td>{{ item.subtotal }}</td>
+                </tr>
+            </tbody>
+        </table>
+            
+        <div>
+            <input v-model="newItem.name" placeholder="物品名">
+            <input v-model="newItem.price" placeholder="单价">
+            <input v-model="newItem.quantity" placeholder="数量">
+            <button @click="addItem">确定</button>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    { name: '苹果', price: 0, quantity: 0, subtotal: 0 },
+                    { name: '鸭梨', price: 0, quantity: 0, subtotal: 0 },
+                    { name: '香蕉', price: 0, quantity: 0, subtotal: 0 }
+                ],
+                newItem: {
+                    name: '',
+                    price: 0,
+                    quantity: 0
+                }
+            },
+            methods: {
+                updateSubtotal(item) {
+                    item.subtotal = item.price * item.quantity;
+                },
+                addItem() {
+                    if (this.newItem.name !== '' && this.newItem.price !== 0 && this.newItem.quantity !== 0) {
+                        this.items.push({
+                            name: this.newItem.name,
+                            price: this.newItem.price,
+                            quantity: this.newItem.quantity,
+                            subtotal: this.newItem.price * this.newItem.quantity
+                        });
+                        this.newItem.name = '';
+                        this.newItem.price = 0;
+                        this.newItem.quantity = 0;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

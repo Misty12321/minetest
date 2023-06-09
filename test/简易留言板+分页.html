@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagination {
+            margin-right: 10px;
+        }
+
+        .pagination span {
+            margin-right: 10px;
+            display: inline-block;
+            border: 1px solid;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" @keyup.13="add"><button @click="add">添加</button>
+        <ul>
+            <li v-for="(item, index) in displayedMessages">
+                <span>{{ item }}</span>
+                <button @click="openEditDialog(index)">编辑</button>
+            </li>
+        </ul>
+        <div class="pagination">
+            <span v-for="(item, index) in total" :key="index" @click="changePage(item)">{{ item }}</span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+                arr: [],
+                page: 1,
+                count: 5,
+               
+            },
+            methods: {
+                add() {
+                    if (this.msg.trim() === '') {
+                        alert('不能为空');
+                        return;
+                    } else {
+                        this.arr.push(this.msg);
+                        this.msg = '';
+                    }
+                },
+                del(index) {
+                    this.arr.splice(index, 1);
+                    alert('删除成功');
+                },
+                openEditDialog(index) {
+                    const newValue = prompt('请输入修改后的值', this.arr[index]);
+                    if (newValue !== null) {
+                        this.update(index, newValue);
+                    }
+                },
+                update(index, newv) {
+                    if (newv.trim() === '') {
+                        alert('不能为空');
+                        return;
+                    }
+                    this.arr.splice(index, 1, newv); // 使用 splice 替换数组中的元素，确保触发响应式更新
+                },
+                changePage(item) {
+                    this.page = item;
+                }
+            },
+            computed: {
+                total() {
+                    return Math.ceil(this.arr.length / this.count);
+                },
+                displayedMessages() {
+                    const start = (this.page - 1) * this.count;
+                    const end = start + this.count;
+                    return this.arr.slice(start, end);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
