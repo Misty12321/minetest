@@ -1,31 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-
-    <Head/>
+    <Head></Head>
+    <Body></Body>
+    <Foot></Foot>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 import Head from './components/Head.vue'
+import Body from './components/Body.vue'
+import Foot from './components/Foot.vue'
+
 export default {
-  components:{
-    HelloWorld,
-    Head
+  components: {
+
+    Body,
+
+  },
+  beforeCreate() {
+    console.log('创建前1')
+  },
+  created() {
+    console.log('创建后2')
+  },
+  beforeMount() {
+    console.log('挂载前3')
+  },
+  mounted() {
+    console.log('挂载后4')
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
